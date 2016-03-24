@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace VideoPoker
 {
-    public partial class frmTable : Form
+    public partial class frmTableTop : Form
     {
-        public frmTable()
+        Random rnd = new Random();
+        public frmTableTop()
         {
             InitializeComponent();
         }
@@ -20,6 +21,13 @@ namespace VideoPoker
         private void mnuExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void frmTableTop_Load(object sender, EventArgs e)
+        {
+            Deck deck = new Deck(this, rnd);
+            for (int i = 0; i<52;i++)
+                this.flowLayoutPanel1.Controls.Add(deck.Deal().pCard);
         }
     }
 }

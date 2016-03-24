@@ -16,7 +16,7 @@ namespace VideoPoker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTable());
+            Application.Run(new frmTableTop());
         }
     }
 }
