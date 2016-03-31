@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace VideoPoker
 {
-    class Card : IDisposable
+    public class Card : IDisposable
     {
 
         #region Private Members
@@ -20,11 +20,43 @@ namespace VideoPoker
         private Image _HImage = null;
         private PictureBox _Card = null;
         private bool _IsHeld = false;
+        private bool _IsFront = true;
+        private Form _form = null;
 
 
         #endregion
 
         #region Public Properties
+        public bool Bouncable
+        {
+            set
+            {
+                if(value == true)
+                {
+                    _Card.MouseEnter += _Card_MouseEnter;
+                    _Card.MouseLeave += _Card_MouseLeave;
+                }
+                else
+                {
+                    _Card.MouseEnter -= _Card_MouseEnter;
+                    _Card.MouseLeave -= _Card_MouseLeave;
+                }
+            }
+        }
+        public bool Holdable
+        {
+            set
+            {
+                if(value == true)
+                {
+                    _Card.MouseClick += _Card_MouseClick;
+                }
+                else
+                {
+                    _Card.MouseClick -= _Card_MouseClick;
+                }
+            }
+        }
 
         public PictureBox pCard
         {
@@ -108,6 +140,12 @@ namespace VideoPoker
 
         #region  Public Methods 
 
+        public void Flip()
+        {
+                _Card.Image = _FImage;
+
+        }
+
         #endregion
 
         #region  Public Events 
@@ -127,12 +165,16 @@ namespace VideoPoker
 
         private void _Card_MouseLeave(object sender, EventArgs e)
         {
-            
+            Point location = _Card.Location;
+            location.Y += 5;
+            _Card.Location = location;
         }
 
         private void _Card_MouseEnter(object sender, EventArgs e)
         {
-            
+            Point location = _Card.Location;
+            location.Y -= 5;
+            _Card.Location = location;
         }
 
         #endregion
@@ -143,12 +185,10 @@ namespace VideoPoker
         #endregion
 
         #region Construction 
-        public Card()
+        public Card(Form form)
         {
+            _form = form;
             _Card = new PictureBox();
-            _Card.MouseEnter += _Card_MouseEnter;
-            _Card.MouseLeave += _Card_MouseLeave;
-            _Card.MouseClick += _Card_MouseClick;
             
         }
 
@@ -161,9 +201,13 @@ namespace VideoPoker
             {
                 if (disposing)
                 {
-                    // TODO: dispose managed state (managed objects).
+                    _form.Controls.Remove(_Card);
                 }
-
+                _FImage = null;
+                _BImage = null;
+                _HImage = null;
+                _Card = null;
+                _form = null;
                 // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
                 // TODO: set large fields to null.
 

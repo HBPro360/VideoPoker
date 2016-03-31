@@ -36,9 +36,9 @@
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.dealToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blargToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.blargToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuDraw = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPoker.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,7 @@
             // 
             this.pokerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuNewGame,
+            this.mnuDraw,
             this.mnuExit});
             this.pokerToolStripMenuItem.Name = "pokerToolStripMenuItem";
             this.pokerToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
@@ -67,13 +68,14 @@
             // mnuNewGame
             // 
             this.mnuNewGame.Name = "mnuNewGame";
-            this.mnuNewGame.Size = new System.Drawing.Size(132, 22);
+            this.mnuNewGame.Size = new System.Drawing.Size(152, 22);
             this.mnuNewGame.Text = "New Game";
+            this.mnuNewGame.Click += new System.EventHandler(this.mnuNewGame_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(132, 22);
+            this.mnuExit.Size = new System.Drawing.Size(152, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
@@ -88,19 +90,22 @@
             this.blargToolStripMenuItem.Name = "blargToolStripMenuItem";
             this.blargToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
             // 
+            // blargToolStripMenuItem1
+            // 
+            this.blargToolStripMenuItem1.Name = "blargToolStripMenuItem1";
+            this.blargToolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // flowLayoutPanel1
+            // mnuDraw
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 24);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(805, 544);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.mnuDraw.Name = "mnuDraw";
+            this.mnuDraw.Size = new System.Drawing.Size(152, 22);
+            this.mnuDraw.Text = "Draw";
+            this.mnuDraw.Click += new System.EventHandler(this.mnuDraw_Click);
             // 
             // frmTableTop
             // 
@@ -109,10 +114,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(805, 568);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.mnuPoker);
             this.MainMenuStrip = this.mnuPoker;
             this.Name = "frmTableTop";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmTableTop_Load);
             this.mnuPoker.ResumeLayout(false);
             this.mnuPoker.PerformLayout();
@@ -129,9 +134,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dealToolStripMenuItem;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStripMenuItem blargToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blargToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem mnuDraw;
     }
 }
 

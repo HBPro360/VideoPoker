@@ -2,7 +2,6 @@ c:\users\jhamm014089\documents\visual studio 2015\Projects\VideoPoker\VideoPoker
 c:\users\jhamm014089\documents\visual studio 2015\Projects\VideoPoker\VideoPoker\bin\Debug\VideoPoker.exe
 c:\users\jhamm014089\documents\visual studio 2015\Projects\VideoPoker\VideoPoker\bin\Debug\VideoPoker.pdb
 c:\users\jhamm014089\documents\visual studio 2015\Projects\VideoPoker\VideoPoker\obj\Debug\VideoPoker.csprojResolveAssemblyReference.cache
-c:\users\jhamm014089\documents\visual studio 2015\Projects\VideoPoker\VideoPoker\obj\Debug\VideoPoker.frmTable.resources
 c:\users\jhamm014089\documents\visual studio 2015\Projects\VideoPoker\VideoPoker\obj\Debug\VideoPoker.Properties.Resources.resources
 c:\users\jhamm014089\documents\visual studio 2015\Projects\VideoPoker\VideoPoker\obj\Debug\VideoPoker.csproj.GenerateResource.Cache
 c:\users\jhamm014089\documents\visual studio 2015\Projects\VideoPoker\VideoPoker\obj\Debug\VideoPoker.exe
@@ -16,3 +15,7 @@ E:\C# Programming\Second Term\VideoPoker\VideoPoker\obj\Debug\VideoPoker.csprojR
 E:\C# Programming\Second Term\VideoPoker\VideoPoker\obj\Debug\VideoPoker.frmTableTop.resources
 E:\C# Programming\Second Term\VideoPoker\VideoPoker\obj\Debug\VideoPoker.Properties.Resources.resources
 E:\C# Programming\Second Term\VideoPoker\VideoPoker\obj\Debug\VideoPoker.csproj.GenerateResource.Cache
+C:\Users\jhamm014089\Documents\VideoPoker\VideoPoker\bin\Debug\VideoPoker.exe.config
+C:\Users\jhamm014089\Documents\VideoPoker\VideoPoker\obj\Debug\VideoPoker.exe
+C:\Users\jhamm014089\Documents\VideoPoker\VideoPoker\obj\Debug\VideoPoker.pdb
+C:\Users\jhamm014089\Documents\Visual Studio 2015\Projects\VideoPoker\VideoPoker\obj\Debug\VideoPoker.frmTableTop.resources
