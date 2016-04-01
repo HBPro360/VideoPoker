@@ -59,26 +59,26 @@ namespace VideoPoker
             }
         }
 
-        private void Shuffle()
-        {
-            for (int j = 1; j < 7; j++)
-            for (int i = 0; i < _Cards.Count;i++)
-            {
-                int position = _rnd.Next(0, 52);
-                Card temp = new Card(_form);
-                temp = _Cards[i];
-                _Cards[i] = _Cards[position];
-                _Cards[position] = temp;
-
-            }
-        }
-
         private void LoadShoe()
         {
-            foreach(Card card in _Cards)
+            foreach (Card card in _Cards)
             {
                 _Shoe.Enqueue(card);
             }
+        }
+
+        private void Shuffle()
+        {
+            for (int j = 1; j < 7; j++)
+                for (int i = 0; i < _Cards.Count; i++)
+                {
+                    int position = _rnd.Next(0, 52);
+                    Card temp = new Card(_form);
+                    temp = _Cards[i];
+                    _Cards[i] = _Cards[position];
+                    _Cards[position] = temp;
+
+                }
         }
 
         #endregion
@@ -87,8 +87,19 @@ namespace VideoPoker
 
         public Card Deal()
         {
-            Card card = _Shoe.Dequeue();
-            return card;
+            
+                Card card = _Shoe.Dequeue();
+                return card;
+            
+        }
+
+        public void Dispose()
+        {
+            foreach (Card card in _Cards)
+            {
+                card.Dispose();
+                Application.DoEvents();
+            }
         }
 
         public void Show()
@@ -104,6 +115,7 @@ namespace VideoPoker
                 y += -2;
             }
         }
+
 
         #endregion
 

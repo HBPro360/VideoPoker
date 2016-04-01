@@ -32,13 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTableTop));
             this.mnuPoker = new System.Windows.Forms.MenuStrip();
             this.pokerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewGame = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.dealToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.blargToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.blargToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuNewGame = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDraw = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuPoker.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,9 +43,8 @@
             // 
             this.mnuPoker.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pokerToolStripMenuItem,
-            this.dealToolStripMenuItem,
-            this.blargToolStripMenuItem,
-            this.blargToolStripMenuItem1});
+            this.mnuNewGame,
+            this.mnuDraw});
             this.mnuPoker.Location = new System.Drawing.Point(0, 0);
             this.mnuPoker.Name = "mnuPoker";
             this.mnuPoker.Size = new System.Drawing.Size(805, 24);
@@ -58,19 +54,10 @@
             // pokerToolStripMenuItem
             // 
             this.pokerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuNewGame,
-            this.mnuDraw,
             this.mnuExit});
             this.pokerToolStripMenuItem.Name = "pokerToolStripMenuItem";
             this.pokerToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.pokerToolStripMenuItem.Text = "Poker";
-            // 
-            // mnuNewGame
-            // 
-            this.mnuNewGame.Name = "mnuNewGame";
-            this.mnuNewGame.Size = new System.Drawing.Size(152, 22);
-            this.mnuNewGame.Text = "New Game";
-            this.mnuNewGame.Click += new System.EventHandler(this.mnuNewGame_Click);
             // 
             // mnuExit
             // 
@@ -79,33 +66,26 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
-            // dealToolStripMenuItem
+            // mnuNewGame
             // 
-            this.dealToolStripMenuItem.Name = "dealToolStripMenuItem";
-            this.dealToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.dealToolStripMenuItem.Text = "Deal";
+            this.mnuNewGame.AccessibleName = "";
+            this.mnuNewGame.Name = "mnuNewGame";
+            this.mnuNewGame.Size = new System.Drawing.Size(77, 20);
+            this.mnuNewGame.Text = "New Game";
+            this.mnuNewGame.Click += new System.EventHandler(this.mnuNewGame_Click);
             // 
-            // blargToolStripMenuItem
+            // mnuDraw
             // 
-            this.blargToolStripMenuItem.Name = "blargToolStripMenuItem";
-            this.blargToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
-            // 
-            // blargToolStripMenuItem1
-            // 
-            this.blargToolStripMenuItem1.Name = "blargToolStripMenuItem1";
-            this.blargToolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
+            this.mnuDraw.AccessibleName = "";
+            this.mnuDraw.Name = "mnuDraw";
+            this.mnuDraw.Size = new System.Drawing.Size(46, 20);
+            this.mnuDraw.Text = "Draw";
+            this.mnuDraw.Click += new System.EventHandler(this.mnuDraw_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // mnuDraw
-            // 
-            this.mnuDraw.Name = "mnuDraw";
-            this.mnuDraw.Size = new System.Drawing.Size(152, 22);
-            this.mnuDraw.Text = "Draw";
-            this.mnuDraw.Click += new System.EventHandler(this.mnuDraw_Click);
             // 
             // frmTableTop
             // 
@@ -130,13 +110,10 @@
 
         private System.Windows.Forms.MenuStrip mnuPoker;
         private System.Windows.Forms.ToolStripMenuItem pokerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnuNewGame;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem dealToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem blargToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem blargToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mnuDraw;
+        private System.Windows.Forms.ToolStripMenuItem mnuNewGame;
     }
 }
 
