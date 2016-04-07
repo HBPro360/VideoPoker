@@ -291,6 +291,11 @@ namespace VideoPoker
             }
         }
 
+        public void Add(Card card)
+        {
+            _SCards.Add(card);
+        }
+
 
         #endregion
 

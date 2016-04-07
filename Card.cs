@@ -192,6 +192,11 @@ namespace VideoPoker
             
         }
 
+        public Card()
+        {
+
+        }
+
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
 
