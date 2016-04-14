@@ -230,7 +230,7 @@ namespace VideoPoker
             }
             else
             {
-                result = "High Card";
+                result = "You Participated!";
             }
             return result;
         }

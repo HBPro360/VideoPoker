@@ -206,13 +206,16 @@ namespace VideoPoker
             {
                 if (disposing)
                 {
+                    this.Bouncable = false;
                     _form.Controls.Remove(_Card);
                 }
+
                 _FImage = null;
                 _BImage = null;
                 _HImage = null;
                 _Card = null;
                 _form = null;
+
                 // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
                 // TODO: set large fields to null.
 
