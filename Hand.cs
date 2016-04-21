@@ -187,50 +187,61 @@ namespace VideoPoker
 
         #region  Public Methods 
 
-        public string Evaluate()
+        public HandValue Evaluate()
         {
+            HandValue result = new HandValue();
             Sort();
 
-            string result = string.Empty;
+            //string result = string.Empty;
             if (RFlush()==true)
             {
-                result = "Royal Flush";
+                result.Multiplier = Values.RoyalFlush;
+                result.Description = "Royal Flush";
             }
             else if (SFlush() == true)
             {
-                result = "Straight Flush";
+                result.Multiplier = Values.StraightFlush;
+                result.Description = "Straight Flush";
             }
             else if (FourKind() == true)
             {
-                result = "Four of a Kind";
+                result.Multiplier = Values.FourOfAKind;
+                result.Description = "Four of a Kind";
             }
             else if (FullHouse()== true)
             {
-                result = "Full House";
+                result.Multiplier = Values.FullHouse;
+                result.Description = "Full House";
             }
             else if (Flush()== true)
             {
-                result = "Flush";
+                result.Multiplier = Values.Flush;
+                result.Description = "Flush";
             }
             else if (Straight()== true)
             {
-                result = "Straight";
+                result.Multiplier = Values.Straight;
+                result.Description = "Straight";
             }
             else if (ThreeKind()== true)
             {
-                result = "Three of a Kind";
+                result.Multiplier = Values.ThreeOfAKind;
+                result.Description = "Three of a Kind";
             }
             else if (TwoPair()== true)
             {
-                result = "Two Pair";
+                result.Multiplier = Values.TwoPair;
+                result.Description = "Two Pair";
             }
             else if (Pair()== true)
             {
-                result = "Pair";
+                result.Multiplier = Values.Pair;
+                result.Description = "Pair";
             }
             else
             {
-                result = "You Participated!";
+                result.Multiplier = Values.HighCard;
+                result.Description = "You Participated!";
             }
             return result;
         }

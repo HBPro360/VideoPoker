@@ -15,6 +15,7 @@ namespace VideoPoker
         Random rnd = new Random();
         Deck deck;
         Hand hand;
+        List<Button> buttons;
         private void EnableNG()
         {
             mnuNewGame.Enabled = true;
@@ -26,9 +27,7 @@ namespace VideoPoker
             mnuNewGame.Enabled = false;
             mnuDraw.Enabled = true;
         }
-
-
-
+        
         private void EnablePBtn()
         {
             btn25.Enabled = true;
@@ -43,20 +42,6 @@ namespace VideoPoker
             btn75.Enabled = false;
             btn100.Enabled = false;
         }
-        private void EnableNBtn()
-        {
-            btnN25.Enabled = true;
-            btnN50.Enabled = true;
-            btnN75.Enabled = true;
-            btnN100.Enabled = true;
-        }
-        private void DisableNBtn()
-        {
-            btnN25.Enabled = false;
-            btnN50.Enabled = false;
-            btnN75.Enabled = false;
-            btnN100.Enabled = false;
-        }
 
         public frmTableTop()
         {
@@ -68,8 +53,6 @@ namespace VideoPoker
             DialogResult result = MessageBox.Show("Are you absolutely sure you want to exit?", "You're Leaving?", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                MessageBox.Show("      You can never leave! MUAHAHAHAHAHAHA");
-                MessageBox.Show("        Just Kidding");
                 Application.Exit();
             }
             
@@ -77,17 +60,44 @@ namespace VideoPoker
 
         private void frmTableTop_Load(object sender, EventArgs e)
         {
-            EnableNG();   
+            EnableNG();
+            buttons = new List<Button>();
+            buttons.Add(btn25);
+            buttons.Add(btn50);
+            buttons.Add(btn75);
+            buttons.Add(btn100);
+
+            decimal bank = decimal.Parse(lblMoney.Text);
+            if (bank == 0)
+            {
+                ChangeButtonStatus(false);
+                mnuNewGame.Enabled = false;
+            }
+            else
+            {
+                ChangeButtonStatus(true);
+
+                mnuNewGame.Enabled = true;
+            }
+
+        }
+
+        private void ChangeButtonStatus(bool status)
+        {
+            foreach (Button btn in buttons)
+            {
+                btn.Enabled = status;
+            }
         }
 
         private void mnuNewGame_Click(object sender, EventArgs e)
         {
-            if(deck!=null)
+            if (deck != null)
             {
                 deck.Dispose();
             }
             deck = new Deck(this, rnd);
-            deck.Show();            
+            deck.Show();
             if (hand != null)
             {
                 hand.Dispose();
@@ -98,8 +108,22 @@ namespace VideoPoker
                 hand.Deal = deck.Deal();
             }
             hand.Show();
-            this.lblHand.Text = hand.Evaluate();
+            HandValue result = hand.Evaluate();
+            this.lblHand.Text = result.Description;
+            lblWin.Text = 0.ToString();
             DisableNG();
+            DisablePBtn();
+
+        }
+
+        private void Calculate(Values multiplier)
+        {
+            double bet = double.Parse(this.lblBet.Text);
+            double cash = bet * (double)multiplier;
+            double money = double.Parse(lblMoney.Text);
+            money += cash;
+            lblMoney.Text = string.Format("{0:F}", money);
+            lblWin.Text = cash.ToString();
             
         }
 
@@ -107,86 +131,53 @@ namespace VideoPoker
         {
             hand.Draw(deck);
             hand.Show();
-            this.lblHand.Text = hand.Evaluate();
-            EnableNG();
+            HandValue result = hand.Evaluate();
+            this.lblHand.Text = result.Description;
+
+            Calculate(result.Multiplier);
+            lblBet.Text = 0.ToString();
+            //EnableNG();
+            EnablePBtn();
         }
 
         private void btnBet_Click(object sender, EventArgs e)
         {
-            //double money = Double.Parse(lblMoney.Text);
-            //Button btn = (Button)sender;
-            //double value = Double.Parse(btn.Tag.ToString());
-            int money = Convert.ToInt32(lblMoney.Text);
-            int betV = Convert.ToInt32(lblBet.Text);
-
+            double money = Double.Parse(lblMoney.Text);
             Button btn = (Button)sender;
+            double value = Double.Parse(btn.Text.ToString());
 
-            int value = Convert.ToInt32(btn.Text);
-
-            if (money - value <= 0)
+            if(money - value >= 0)
             {
                 money -= value;
-
                 lblMoney.Text = money.ToString();
-
-                int bet = Convert.ToInt32(lblBet.Text);
-
-                bet += value;
-
+                double bet = Convert.ToDouble(lblBet.Text);
+                bet = value;
                 lblBet.Text = bet.ToString();
-
-                DisablePBtn();
             }
-            else if (money - value >= 0)
-            {
-                money -= value;
-
-                lblMoney.Text = money.ToString();
-
-                int bet = Convert.ToInt32(lblBet.Text);
-
-                bet += value;
-
-                lblBet.Text = bet.ToString();
-
-                EnableNBtn();
-            }
-            if (betV - value <= 0)
-            {
-                money -= value;
-
-                lblMoney.Text = money.ToString();
-
-                int bet = Convert.ToInt32(lblBet.Text);
-
-                bet += value;
-
-                lblBet.Text = bet.ToString();
-
-                DisableNBtn();
-            }
-            if (betV - value <= 0)
-            {
-                money -= value;
-
-                lblMoney.Text = money.ToString();
-
-                int bet = Convert.ToInt32(lblBet.Text);
-
-                bet += value;
-
-                lblBet.Text = bet.ToString();
-
-                DisableNBtn();
-            }
+            DisablePBtn();
+            EnableNG();
+           
 
         }
         private void mnuPurchase_Click(object sender, EventArgs e)
         {
-            int money = Convert.ToInt32(lblMoney.Text);
+            double money = Convert.ToDouble(lblMoney.Text);
             money += 100;
-            lblMoney.Text = money.ToString();
-            EnablePBtn();
+            lblMoney.Text = string.Format("{0:F}", money);
+            double bank = double.Parse(lblMoney.Text);
+            if (bank > 0)
+            {
+                this.mnuNewGame.Enabled = true;
+                this.ChangeButtonStatus(true);
+            }
+            DisableNG();
+            //lblMoney.Text = money.ToString();
+            //EnablePBtn();
+        }
+
+        private void lblWin_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

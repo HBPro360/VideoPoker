@@ -47,11 +47,9 @@
             this.btn75 = new System.Windows.Forms.Button();
             this.btn100 = new System.Windows.Forms.Button();
             this.lblBet = new System.Windows.Forms.Label();
-            this.btnN25 = new System.Windows.Forms.Button();
-            this.btnN50 = new System.Windows.Forms.Button();
-            this.btnN75 = new System.Windows.Forms.Button();
-            this.btnN100 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblWinTitle = new System.Windows.Forms.Label();
+            this.lblWin = new System.Windows.Forms.Label();
             this.mnuPoker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -122,11 +120,11 @@
             // 
             this.lblHand.AutoSize = true;
             this.lblHand.BackColor = System.Drawing.Color.Transparent;
-            this.lblHand.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHand.Font = new System.Drawing.Font("Showcard Gothic", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHand.ForeColor = System.Drawing.Color.White;
             this.lblHand.Location = new System.Drawing.Point(254, 227);
             this.lblHand.Name = "lblHand";
-            this.lblHand.Size = new System.Drawing.Size(0, 79);
+            this.lblHand.Size = new System.Drawing.Size(0, 66);
             this.lblHand.TabIndex = 1;
             // 
             // lblMoneyTitle
@@ -217,46 +215,6 @@
             this.lblBet.TabIndex = 10;
             this.lblBet.Text = "0";
             // 
-            // btnN25
-            // 
-            this.btnN25.Location = new System.Drawing.Point(114, 103);
-            this.btnN25.Name = "btnN25";
-            this.btnN25.Size = new System.Drawing.Size(75, 23);
-            this.btnN25.TabIndex = 11;
-            this.btnN25.Text = "-25";
-            this.btnN25.UseVisualStyleBackColor = true;
-            this.btnN25.Click += new System.EventHandler(this.btnBet_Click);
-            // 
-            // btnN50
-            // 
-            this.btnN50.Location = new System.Drawing.Point(114, 132);
-            this.btnN50.Name = "btnN50";
-            this.btnN50.Size = new System.Drawing.Size(75, 23);
-            this.btnN50.TabIndex = 12;
-            this.btnN50.Text = "-50";
-            this.btnN50.UseVisualStyleBackColor = true;
-            this.btnN50.Click += new System.EventHandler(this.btnBet_Click);
-            // 
-            // btnN75
-            // 
-            this.btnN75.Location = new System.Drawing.Point(114, 161);
-            this.btnN75.Name = "btnN75";
-            this.btnN75.Size = new System.Drawing.Size(75, 23);
-            this.btnN75.TabIndex = 13;
-            this.btnN75.Text = "-75";
-            this.btnN75.UseVisualStyleBackColor = true;
-            this.btnN75.Click += new System.EventHandler(this.btnBet_Click);
-            // 
-            // btnN100
-            // 
-            this.btnN100.Location = new System.Drawing.Point(114, 190);
-            this.btnN100.Name = "btnN100";
-            this.btnN100.Size = new System.Drawing.Size(75, 23);
-            this.btnN100.TabIndex = 14;
-            this.btnN100.Text = "-100";
-            this.btnN100.UseVisualStyleBackColor = true;
-            this.btnN100.Click += new System.EventHandler(this.btnBet_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -266,6 +224,31 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // lblWinTitle
+            // 
+            this.lblWinTitle.AutoSize = true;
+            this.lblWinTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblWinTitle.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWinTitle.ForeColor = System.Drawing.Color.White;
+            this.lblWinTitle.Location = new System.Drawing.Point(177, 44);
+            this.lblWinTitle.Name = "lblWinTitle";
+            this.lblWinTitle.Size = new System.Drawing.Size(91, 20);
+            this.lblWinTitle.TabIndex = 16;
+            this.lblWinTitle.Text = "Winnings";
+            // 
+            // lblWin
+            // 
+            this.lblWin.AutoSize = true;
+            this.lblWin.BackColor = System.Drawing.Color.Transparent;
+            this.lblWin.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWin.ForeColor = System.Drawing.Color.White;
+            this.lblWin.Location = new System.Drawing.Point(274, 44);
+            this.lblWin.Name = "lblWin";
+            this.lblWin.Size = new System.Drawing.Size(18, 20);
+            this.lblWin.TabIndex = 17;
+            this.lblWin.Text = "0";
+            this.lblWin.Click += new System.EventHandler(this.lblWin_Click);
+            // 
             // frmTableTop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,11 +256,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(805, 568);
+            this.Controls.Add(this.lblWin);
+            this.Controls.Add(this.lblWinTitle);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnN100);
-            this.Controls.Add(this.btnN75);
-            this.Controls.Add(this.btnN50);
-            this.Controls.Add(this.btnN25);
             this.Controls.Add(this.lblBet);
             this.Controls.Add(this.btn100);
             this.Controls.Add(this.btn75);
@@ -309,7 +290,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuDraw;
         private System.Windows.Forms.ToolStripMenuItem mnuNewGame;
-        private System.Windows.Forms.Label lblHand;
         private System.Windows.Forms.Label lblMoneyTitle;
         private System.Windows.Forms.Label lblMoney;
         private System.Windows.Forms.Label lblBetTitle;
@@ -320,11 +300,10 @@
         private System.Windows.Forms.Label lblBet;
         private System.Windows.Forms.ToolStripMenuItem mnuPurchase;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.Button btnN25;
-        private System.Windows.Forms.Button btnN50;
-        private System.Windows.Forms.Button btnN75;
-        private System.Windows.Forms.Button btnN100;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblHand;
+        private System.Windows.Forms.Label lblWinTitle;
+        private System.Windows.Forms.Label lblWin;
     }
 }
 
