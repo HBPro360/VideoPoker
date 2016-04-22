@@ -241,7 +241,7 @@ namespace VideoPoker
             else
             {
                 result.Multiplier = Values.HighCard;
-                result.Description = "You Participated!";
+                result.Description = "No Value";
             }
             return result;
         }

@@ -122,7 +122,7 @@
             this.lblHand.BackColor = System.Drawing.Color.Transparent;
             this.lblHand.Font = new System.Drawing.Font("Showcard Gothic", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHand.ForeColor = System.Drawing.Color.White;
-            this.lblHand.Location = new System.Drawing.Point(254, 227);
+            this.lblHand.Location = new System.Drawing.Point(303, 253);
             this.lblHand.Name = "lblHand";
             this.lblHand.Size = new System.Drawing.Size(0, 66);
             this.lblHand.TabIndex = 1;
@@ -133,7 +133,7 @@
             this.lblMoneyTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblMoneyTitle.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoneyTitle.ForeColor = System.Drawing.Color.White;
-            this.lblMoneyTitle.Location = new System.Drawing.Point(21, 44);
+            this.lblMoneyTitle.Location = new System.Drawing.Point(70, 70);
             this.lblMoneyTitle.Name = "lblMoneyTitle";
             this.lblMoneyTitle.Size = new System.Drawing.Size(68, 20);
             this.lblMoneyTitle.TabIndex = 2;
@@ -145,7 +145,7 @@
             this.lblMoney.BackColor = System.Drawing.Color.Transparent;
             this.lblMoney.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoney.ForeColor = System.Drawing.Color.White;
-            this.lblMoney.Location = new System.Drawing.Point(90, 44);
+            this.lblMoney.Location = new System.Drawing.Point(139, 70);
             this.lblMoney.Name = "lblMoney";
             this.lblMoney.Size = new System.Drawing.Size(18, 20);
             this.lblMoney.TabIndex = 3;
@@ -157,7 +157,7 @@
             this.lblBetTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblBetTitle.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBetTitle.ForeColor = System.Drawing.Color.White;
-            this.lblBetTitle.Location = new System.Drawing.Point(22, 77);
+            this.lblBetTitle.Location = new System.Drawing.Point(71, 103);
             this.lblBetTitle.Name = "lblBetTitle";
             this.lblBetTitle.Size = new System.Drawing.Size(39, 20);
             this.lblBetTitle.TabIndex = 4;
@@ -165,7 +165,7 @@
             // 
             // btn25
             // 
-            this.btn25.Location = new System.Drawing.Point(26, 103);
+            this.btn25.Location = new System.Drawing.Point(75, 129);
             this.btn25.Name = "btn25";
             this.btn25.Size = new System.Drawing.Size(75, 23);
             this.btn25.TabIndex = 6;
@@ -175,7 +175,7 @@
             // 
             // btn50
             // 
-            this.btn50.Location = new System.Drawing.Point(26, 132);
+            this.btn50.Location = new System.Drawing.Point(75, 158);
             this.btn50.Name = "btn50";
             this.btn50.Size = new System.Drawing.Size(75, 23);
             this.btn50.TabIndex = 7;
@@ -185,7 +185,7 @@
             // 
             // btn75
             // 
-            this.btn75.Location = new System.Drawing.Point(25, 161);
+            this.btn75.Location = new System.Drawing.Point(74, 187);
             this.btn75.Name = "btn75";
             this.btn75.Size = new System.Drawing.Size(75, 23);
             this.btn75.TabIndex = 8;
@@ -195,7 +195,7 @@
             // 
             // btn100
             // 
-            this.btn100.Location = new System.Drawing.Point(26, 190);
+            this.btn100.Location = new System.Drawing.Point(75, 216);
             this.btn100.Name = "btn100";
             this.btn100.Size = new System.Drawing.Size(75, 23);
             this.btn100.TabIndex = 9;
@@ -209,7 +209,7 @@
             this.lblBet.BackColor = System.Drawing.Color.Transparent;
             this.lblBet.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBet.ForeColor = System.Drawing.Color.White;
-            this.lblBet.Location = new System.Drawing.Point(90, 77);
+            this.lblBet.Location = new System.Drawing.Point(139, 103);
             this.lblBet.Name = "lblBet";
             this.lblBet.Size = new System.Drawing.Size(18, 20);
             this.lblBet.TabIndex = 10;
@@ -218,7 +218,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(25, 227);
+            this.pictureBox1.Location = new System.Drawing.Point(74, 253);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 147);
             this.pictureBox1.TabIndex = 15;
@@ -230,7 +230,7 @@
             this.lblWinTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblWinTitle.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWinTitle.ForeColor = System.Drawing.Color.White;
-            this.lblWinTitle.Location = new System.Drawing.Point(177, 44);
+            this.lblWinTitle.Location = new System.Drawing.Point(226, 70);
             this.lblWinTitle.Name = "lblWinTitle";
             this.lblWinTitle.Size = new System.Drawing.Size(91, 20);
             this.lblWinTitle.TabIndex = 16;
@@ -242,7 +242,7 @@
             this.lblWin.BackColor = System.Drawing.Color.Transparent;
             this.lblWin.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWin.ForeColor = System.Drawing.Color.White;
-            this.lblWin.Location = new System.Drawing.Point(274, 44);
+            this.lblWin.Location = new System.Drawing.Point(323, 70);
             this.lblWin.Name = "lblWin";
             this.lblWin.Size = new System.Drawing.Size(18, 20);
             this.lblWin.TabIndex = 17;

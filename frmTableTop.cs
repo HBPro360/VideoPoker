@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace VideoPoker
 {
@@ -16,51 +17,11 @@ namespace VideoPoker
         Deck deck;
         Hand hand;
         List<Button> buttons;
-        private void EnableNG()
-        {
-            mnuNewGame.Enabled = true;
-            mnuDraw.Enabled = false;
-        }
+        #region Custom Methods
 
-        private void DisableNG()
+        private void LoadGame()
         {
-            mnuNewGame.Enabled = false;
-            mnuDraw.Enabled = true;
-        }
-        
-        private void EnablePBtn()
-        {
-            btn25.Enabled = true;
-            btn50.Enabled = true;
-            btn75.Enabled = true;
-            btn100.Enabled = true;
-        }
-        private void DisablePBtn()
-        {
-            btn25.Enabled = false;
-            btn50.Enabled = false;
-            btn75.Enabled = false;
-            btn100.Enabled = false;
-        }
-
-        public frmTableTop()
-        {
-            InitializeComponent();
-        }
-
-        private void mnuExit_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Are you absolutely sure you want to exit?", "You're Leaving?", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            
-        }
-
-        private void frmTableTop_Load(object sender, EventArgs e)
-        {
-            EnableNG();
+            ReadSaveFile();
             buttons = new List<Button>();
             buttons.Add(btn25);
             buttons.Add(btn50);
@@ -79,6 +40,89 @@ namespace VideoPoker
 
                 mnuNewGame.Enabled = true;
             }
+        }
+        private void EnableNG()
+        {
+            mnuNewGame.Enabled = true;
+            mnuDraw.Enabled = false;
+        }
+        private void DisableNG()
+        {
+            mnuNewGame.Enabled = false;
+            mnuDraw.Enabled = true;
+        }
+        private void EnablePBtn()
+        {
+            btn25.Enabled = true;
+            btn50.Enabled = true;
+            btn75.Enabled = true;
+            btn100.Enabled = true;
+        }
+        private void DisablePBtn()
+        {
+            btn25.Enabled = false;
+            btn50.Enabled = false;
+            btn75.Enabled = false;
+            btn100.Enabled = false;
+        }
+        private void WriteSaveFile()
+        {
+            string path = Application.ExecutablePath;
+            path = System.IO.Path.GetDirectoryName(path);
+            path = System.IO.Path.Combine(path, "SaveFile.txt");
+            using (StreamWriter writer = File.CreateText(path))
+            {
+                //writer.Write("Money ");
+                writer.WriteLine(lblMoney.Text);
+            }
+        }
+        private void ReadSaveFile()
+        {
+            try
+            {   // Open the text file using a stream reader.
+                string path = Application.ExecutablePath;
+                path = System.IO.Path.GetDirectoryName(path);
+                path = System.IO.Path.Combine(path, "SaveFile.txt");
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    // Read the stream to a string, and write the string to the console.
+                    String line = sr.ReadLine();
+                    lblMoney.Text = line;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
+            //string line;
+
+            //StreamReader reader = new StreamReader("C:\\Users\\jhamm014089\\Documents\\SaveFile.txt");
+            //string line = reader.ReadLine();
+            //reader.Close();
+            //reader.Dispose();
+            //Console.WriteLine(lblMoney.Text);
+        }
+        #endregion
+        public frmTableTop()
+        {
+            InitializeComponent();
+        }
+
+        private void mnuExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you absolutely sure you want to exit?", "You're Leaving?", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
+        }
+
+        private void frmTableTop_Load(object sender, EventArgs e)
+        {
+
+            LoadGame();
 
         }
 
@@ -138,6 +182,7 @@ namespace VideoPoker
             lblBet.Text = 0.ToString();
             //EnableNG();
             EnablePBtn();
+            WriteSaveFile();
         }
 
         private void btnBet_Click(object sender, EventArgs e)
